@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<script src="myplotlib.js"></script>
+<body>
+<canvas id = "myCanvas" width="400px" height="400px" 
+style="width:100%;max-width:400px;border:1px solid black">
+</canvas> 
+
+
+<script>
+// Create a Plotter
+let myPlotter = new XYPlotter("myCanvas");
+myPlotter.transformXY();
+
+
+
+// Create random XY Points
+numPoints = 500;
+const xPoints = Array(numPoints).fill(0).map(function(){return Math.random() * myPlotter.xMax});
+const yPoints = Array(numPoints).fill(0).map(function(){return Math.random() * myPlotter.yMax});
+
+// Plot the Points
+myPlotter.plotPoints(numPoints, xPoints, yPoints, "blue");
+
+// Plot a line
+// Plot a Line
+myPlotter.plotLine(0, 0, myPlotter.xMax, myPlotter.yMax, "red");
+
+// End Plotter Object
+</script>
+</body>
+</html>
